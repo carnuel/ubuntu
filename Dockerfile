@@ -15,7 +15,8 @@ RUN apt-get update &&  apt-get install -y \
 
 # Install Java
 RUN mkdir -p /usr/java/default && \
-	curl -Ls 'http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz' -H 'Cookie: oraclelicense=accept-securebackup-cookie' | \
+	curl -Ls 'http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz' \
+	-H 'Cookie: oraclelicense=accept-securebackup-cookie' | \
 	tar --strip-components=1 -xz -C /usr/java/default/
 
 # Set environment variables
